@@ -1,14 +1,2 @@
 #!/bin/bash
-
-# Set the $PYFILE environment variable to the path of your Python script
-export PYFILE=/data/data/com.termux/files/home/alx-higher_level_programming/0x00-python-hello_world/main.py
-
-
-# Check if the $PYFILE environment variable is set
-if [ -z "$PYFILE" ]; then
-    echo "Error: The environment variable \$PYFILE is not set."
-    exit 1
-fi
-
-# Run the Python script using the value of $PYFILE
-python3 "$PYFILE"
+cat PYFILE | Python3
