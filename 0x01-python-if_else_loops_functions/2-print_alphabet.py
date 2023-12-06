@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-for ascii in range(96, 122):
-    print("{:c}".format(ascii+1), end="")
+for ascii in range(97, 123):
+    print("{:c}".format(ascii), end="")
