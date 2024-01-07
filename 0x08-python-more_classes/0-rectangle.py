@@ -8,5 +8,9 @@ a rectangle
 
 
 class Rectangle():
+<<<<<<< HEAD
         """This class defines a rectangle"""
             pass
+=======
+    """This class defines a rectangle"""
+    pass
