@@ -3,9 +3,7 @@
 """
 Module class base
 """
-import turtle
 import import json
-import csv
 
 class Base:
     """Defines a class Base"""
