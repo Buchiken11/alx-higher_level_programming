@@ -1,55 +1,64 @@
 #!/usr/bin/python3
-
-
+"""Define Square class implement Rectangle
 """
-This module defines the class Square
-"""
-
 
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Defines a class Square"""
+    """Square class body
+"""
 
     def __init__(self, size, x=0, y=0, id=None):
-        """Initialize the attribute of the object.
-           args:
-               size(int): size of a square
-            x(int): position x
-            y(int): position y
-            id(int): value id
+        """Initialization class props in constructor
         """
         super().__init__(size, size, x, y, id)
 
-    def __str__(self):
-        """Return th string representation of the square object"""
-        f = "[Square] ({}) {}/{} - {}"
-        return f.format(self.id, self.x, self.y, self.width)
-
     @property
     def size(self):
+        """ return width size
+        """
         return self.width
 
     @size.setter
     def size(self, value):
-        if type(value) is not int:
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
+        """module Square height and width
+        """
         self.width = value
         self.height = value
 
+    def __str__(self):
+        """Square class string
+        """
+        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id,
+                                                         self.x,
+                                                         self.y,
+                                                         self.width)
+
     def update(self, *args, **kwargs):
-        """assigns attributes to the instance"""
-        if len(args) == 0:
+        """update square props
+        """
+        if len(args):
+            for i, arg in enumerate(args):
+                if i == 0:
+                    self.id = arg
+                elif i == 1:
+                    self.size = arg
+                elif i == 2:
+                    self.x = arg
+                elif i == 3:
+                    self.y = arg
+        else:
             for key, value in kwargs.items():
-                setattr(self, key, value)
-            return
-        my_keys = ["id", "size", "x", "y"]
-        for key, value in zip(my_keys, args):
-            setattr(self, key, value)
+                if hasattr(self, key) is True:
+                    setattr(self, key, value)
 
     def to_dictionary(self):
-        """returns the dictionary representation of a Square"""
-        return {"id": self.id, "x": self.x, "size": self.width, "y": self.y}
+        """ return dict of class props
+        """
+        return {
+            "id": self.id,
+            "size": self.size,
+            "x": self.x,
+            "y": self.y
+        }
