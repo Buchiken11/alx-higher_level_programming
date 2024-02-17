@@ -3,3 +3,4 @@
 DROP TABLE `second_table`
 FROM `score`, `name`
 WHERE `score` <= 5
+ORDER BY `score`;
