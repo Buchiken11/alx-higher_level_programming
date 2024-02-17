@@ -1,4 +1,4 @@
 -- this script lists all tables in a database
 
-USE msql;
-SHOW TABLES;
+-- USE msql;
+SHOW TABLE mysql
