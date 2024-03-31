@@ -4,7 +4,6 @@ import sys
 import request
 
 """Displays the X-Request-Id header variable of a request to a given URL.
-
 Usage: ./5-hbtn_header.py <URL>
 """
 

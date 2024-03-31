@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
-import sys                                              import urllib.error
-import urllib.reques
+import sys
+import urllib.error
+import urllib.request
 
 """Sends a request to a given URL and displays the response body.
 
